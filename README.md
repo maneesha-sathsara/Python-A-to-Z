@@ -42,7 +42,7 @@ I update this repository weekly with new concepts, code snippets, algorithms, an
 *   **Week 10-12: Applied Machine Learning** (Regression, Classification, Cross-Validation)
 *   **Week 13-15: Deep Learning & NLP** (Neural Nets, Embeddings, Language Models)
 *   **Week 16-18: GenAI & RAG** (Building Smart Assistants, API Integrations)
-*   <a href="https://github.com/maneesha-sathsara">
+   <a href="https://github.com/maneesha-sathsara">
   <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=500&size=18&pause=1000&color=2E95D3&repeat=true&width=435&lines=Updates+ongoing...;New+content+added+weekly!" alt="Typing Animation" />
 </a>
 
