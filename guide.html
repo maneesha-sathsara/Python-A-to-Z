@@ -3,103 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python A to Z - Ultimate Beginner's Guide & AI Mentor</title>
+    <title>Python A to Z | Nexzata AI Intelligence</title>
     <style>
         :root { 
-            --bg-color: #07090e; 
-            --card-bg: #111827; 
+            --bg-color: #030712; 
+            --card-bg: #0b1120; 
             --text-primary: #f8fafc; 
             --text-secondary: #94a3b8; 
-            --accent: #38bdf8; 
-            --accent-hover: #0ea5e9; 
-            --python-yellow: #ffd43b;
-            --python-blue: #306998;
-            --border-color: #1f2937;
+            --accent: #0ea5e9; 
+            --accent-glow: rgba(14, 165, 233, 0.4);
+            --python-yellow: #fbbf24;
+            --border-color: #1e293b;
         }
         
-        body { font-family: 'Segoe UI', system-ui, sans-serif; background-color: var(--bg-color); color: var(--text-primary); margin: 0; padding: 0; line-height: 1.6; }
-        .container { max-width: 900px; margin: 40px auto; padding: 20px; }
+        body { font-family: 'Inter', 'Segoe UI', system-ui, sans-serif; background-color: var(--bg-color); color: var(--text-primary); margin: 0; padding: 0; line-height: 1.6; }
+        .container { max-width: 950px; margin: 40px auto; padding: 20px; }
         
-        /* Modern Header */
-        h1 { color: var(--python-yellow); text-align: center; font-size: 3em; margin-bottom: 5px; text-shadow: 0 0 25px rgba(255, 212, 59, 0.25); font-weight: 800; }
-        p.subtitle { text-align: center; color: var(--text-secondary); margin-bottom: 35px; font-size: 1.2em; }
+        /* High-Tech Header */
+        h1 { color: #facc15; text-align: center; font-size: 3.2em; margin-bottom: 5px; text-shadow: 0 0 30px rgba(250, 204, 21, 0.3); font-weight: 900; letter-spacing: -1px; }
+        p.subtitle { text-align: center; color: var(--text-secondary); margin-bottom: 40px; font-size: 1.25em; font-weight: 300; }
 
-        /* Python Interactive Banner */
-        .python-banner { background: linear-gradient(135deg, #1e293b, #0f172a); border: 1px solid rgba(255, 212, 59, 0.3); border-radius: 14px; padding: 22px; text-align: center; margin-bottom: 35px; box-shadow: 0 10px 25px rgba(0,0,0,0.4); }
-        .python-banner p { margin: 0; color: var(--python-yellow); font-family: monospace; font-size: 1.15em; font-weight: 600; }
+        /* Futuristic Terminal Banner */
+        .python-banner { background: linear-gradient(135deg, #0f172a, #1e1b4b); border: 1px solid rgba(14, 165, 233, 0.3); border-radius: 16px; padding: 24px; text-align: center; margin-bottom: 40px; box-shadow: 0 15px 35px rgba(0,0,0,0.6); backdrop-filter: blur(10px); }
+        .python-banner p { margin: 0; color: #38bdf8; font-family: 'Fira Code', monospace; font-size: 1.2em; font-weight: 600; }
         
-        /* High-End Educational Cards */
-        .card { background: var(--card-bg); border-radius: 14px; padding: 28px; margin-bottom: 24px; box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.4); border: 1px solid var(--border-color); border-left: 6px solid var(--python-yellow); transition: transform 0.25s ease, box-shadow 0.25s ease; }
-        .card:hover { transform: translateY(-4px); box-shadow: 0 15px 30px -5px rgba(56, 189, 248, 0.15); border-color: #334155; }
-        .card h2 { margin-top: 0; color: var(--accent); font-size: 1.5em; display: flex; align-items: center; gap: 10px; }
-        .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 15px; margin-top: 15px; }
-        .tool-item { background: #0b0f19; padding: 15px; border-radius: 10px; border: 1px solid #1e293b; }
-        .tool-item strong { color: var(--python-yellow); }
+        /* High-End Futuristic Cards */
+        .card { background: var(--card-bg); border-radius: 16px; padding: 30px; margin-bottom: 25px; box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5); border: 1px solid var(--border-color); border-left: 6px solid #facc15; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px -15px rgba(14, 165, 233, 0.25); border-color: #334155; }
+        .card h2 { margin-top: 0; color: #38bdf8; font-size: 1.6em; display: flex; align-items: center; gap: 12px; }
+        .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px; margin-top: 18px; }
+        .tool-item { background: #030712; padding: 18px; border-radius: 12px; border: 1px solid #1e293b; transition: border-color 0.2s; }
+        .tool-item:hover { border-color: #0ea5e9; }
+        .tool-item strong { color: #facc15; }
 
-        a { color: var(--accent); text-decoration: none; font-weight: 600; transition: color 0.2s; }
-        a:hover { color: var(--python-yellow); text-decoration: underline; }
-        code { background: #070a12; padding: 4px 8px; border-radius: 6px; color: #f472b6; font-family: monospace; border: 1px solid #1e293b; font-size: 0.95em; }
+        a { color: #38bdf8; text-decoration: none; font-weight: 600; transition: color 0.2s; }
+        a:hover { color: #facc15; text-decoration: underline; }
+        code { background: #030712; padding: 5px 10px; border-radius: 6px; color: #f472b6; font-family: monospace; border: 1px solid #1e293b; font-size: 0.95em; }
 
-        /* Floating Chatbot Widget (Bottom Right) */
-        .chat-widget-btn { position: fixed; bottom: 25px; right: 25px; width: 65px; height: 65px; background: linear-gradient(135deg, var(--python-yellow), #f59e0b); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 8px 25px rgba(255, 212, 59, 0.4); z-index: 1000; transition: transform 0.3s ease; border: none; }
-        .chat-widget-btn:hover { transform: scale(1.1); }
-        .chat-widget-btn img { width: 35px; height: 35px; object-fit: contain; }
+        /* Floating AI Widget Button */
+        .chat-widget-btn { position: fixed; bottom: 30px; right: 30px; width: 70px; height: 70px; background: linear-gradient(135deg, #0ea5e9, #6366f1); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 10px 30px rgba(14, 165, 233, 0.5); z-index: 1000; transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); border: 2px solid rgba(255,255,255,0.2); }
+        .chat-widget-btn:hover { transform: scale(1.12); }
+        .chat-widget-btn img { width: 38px; height: 38px; object-fit: contain; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3)); }
 
-        /* Modern Chat Popup Window */
-        .chat-section { position: fixed; bottom: 100px; right: 25px; width: 380px; height: 520px; background: var(--card-bg); border-radius: 20px; border: 1px solid #334155; box-shadow: 0 20px 40px rgba(0,0,0,0.6); display: flex; flex-direction: column; z-index: 1000; overflow: hidden; transition: all 0.3s ease; transform: scale(0); transform-origin: bottom right; opacity: 0; pointer-events: none; }
+        /* Advanced Glassmorphism Chat Popup */
+        .chat-section { position: fixed; bottom: 115px; right: 30px; width: 400px; height: 560px; background: rgba(11, 17, 32, 0.95); backdrop-filter: blur(20px); border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 25px 50px rgba(0,0,0,0.7); display: flex; flex-direction: column; z-index: 1000; overflow: hidden; transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1); transform: scale(0); transform-origin: bottom right; opacity: 0; pointer-events: none; }
         .chat-section.active { transform: scale(1); opacity: 1; pointer-events: auto; }
 
-        .chat-header { background: #0f172a; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1e293b; }
-        .assistant-profile { display: flex; align-items: center; gap: 12px; }
-        .avatar-container { position: relative; width: 42px; height: 42px; }
-        .assistant-avatar { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; border: 2px solid var(--python-yellow); background: #1e293b; }
-        .live-indicator { position: absolute; bottom: 0; right: 0; width: 10px; height: 10px; background-color: #22c55e; border: 2px solid var(--card-bg); border-radius: 50%; animation: pulse-live 1.5s infinite; }
-        @keyframes pulse-live { 0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); } 70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(34, 197, 94, 0); } 100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); } }
+        .chat-header { background: linear-gradient(135deg, #0f172a, #1e1b4b); padding: 18px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .assistant-profile { display: flex; align-items: center; gap: 14px; }
+        .avatar-container { position: relative; width: 46px; height: 46px; }
+        .assistant-avatar { width: 46px; height: 46px; border-radius: 50%; object-fit: cover; border: 2px solid #facc15; background: #1e293b; box-shadow: 0 0 15px rgba(250, 204, 21, 0.4); }
+        .live-indicator { position: absolute; bottom: 0; right: 0; width: 12px; height: 12px; background-color: #22c55e; border: 2px solid #0f172a; border-radius: 50%; animation: pulse-live 1.5s infinite; }
+        @keyframes pulse-live { 0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); } 70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); } 100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); } }
 
-        .assistant-info h3 { margin: 0; color: var(--text-primary); font-size: 1em; }
-        .teaching-status { font-size: 0.75em; color: var(--python-yellow); display: flex; align-items: center; gap: 3px; }
-        .wave-dot { width: 5px; height: 5px; background-color: var(--python-yellow); border-radius: 50%; display: inline-block; animation: wave 1.2s infinite ease-in-out; }
+        .assistant-info h3 { margin: 0; color: #f8fafc; font-size: 1.05em; font-weight: 700; letter-spacing: 0.3px; }
+        .teaching-status { font-size: 0.75em; color: #facc15; display: flex; align-items: center; gap: 4px; font-weight: 500; }
+        .wave-dot { width: 5px; height: 5px; background-color: #facc15; border-radius: 50%; display: inline-block; animation: wave 1.2s infinite ease-in-out; }
         .wave-dot:nth-child(2) { animation-delay: 0.2s; }
         .wave-dot:nth-child(3) { animation-delay: 0.4s; }
-        @keyframes wave { 0%, 60%, 100% { transform: translateY(0); } 30% { transform: translateY(-4px); } }
+        @keyframes wave { 0%, 60%, 100% { transform: translateY(0); } 30% { transform: translateY(-5px); } }
 
-        .close-chat { background: none; border: none; color: var(--text-secondary); font-size: 1.3em; cursor: pointer; padding: 0; }
-        .close-chat:hover { color: var(--text-primary); }
+        .close-chat { background: rgba(255,255,255,0.05); border: none; color: #94a3b8; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1em; cursor: pointer; transition: all 0.2s; }
+        .close-chat:hover { background: rgba(255,255,255,0.15); color: #fff; }
 
-        select { background: #070a12; color: white; border: 1px solid #334155; padding: 6px 10px; border-radius: 6px; outline: none; cursor: pointer; font-size: 0.85em; }
+        select { background: #030712; color: #f8fafc; border: 1px solid #334155; padding: 8px 12px; border-radius: 8px; outline: none; cursor: pointer; font-size: 0.85em; font-weight: 600; transition: border-color 0.2s; }
+        select:focus { border-color: #0ea5e9; }
         
-        .chat-box { flex: 1; overflow-y: auto; background: #070a12; padding: 15px; display: flex; flex-direction: column; gap: 12px; border-bottom: 1px solid #1e293b; }
-        .msg { max-width: 85%; padding: 10px 14px; border-radius: 10px; font-size: 0.9em; line-height: 1.4; }
-        .user-msg { background: var(--python-yellow); color: #0b0f19; align-self: flex-end; border-bottom-right-radius: 2px; font-weight: 600; }
-        .bot-msg { background: #1e293b; color: var(--text-primary); align-self: flex-start; border-bottom-left-radius: 2px; border: 1px solid #334155; }
+        .chat-box { flex: 1; overflow-y: auto; background: #030712; padding: 18px; display: flex; flex-direction: column; gap: 14px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .msg { max-width: 85%; padding: 12px 16px; border-radius: 14px; font-size: 0.92em; line-height: 1.5; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .user-msg { background: linear-gradient(135deg, #0ea5e9, #6366f1); color: #ffffff; align-self: flex-end; border-bottom-right-radius: 3px; font-weight: 500; }
+        .bot-msg { background: #111827; color: #f8fafc; align-self: flex-start; border-bottom-left-radius: 3px; border: 1px solid #1f2937; }
         
-        .input-area { display: flex; gap: 8px; padding: 12px 15px; background: var(--card-bg); }
-        input[type="text"] { flex: 1; padding: 10px 14px; border-radius: 8px; border: 1px solid #334155; background: #070a12; color: white; outline: none; font-size: 0.9em; }
-        input[type="text"]:focus { border-color: var(--python-yellow); }
-        .send-btn { padding: 0 18px; background: var(--python-yellow); color: #0b0f19; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; transition: background 0.2s; }
-        .send-btn:hover { background: #facc15; }
+        .input-area { display: flex; gap: 10px; padding: 15px; background: rgba(11, 17, 32, 0.95); }
+        input[type="text"] { flex: 1; padding: 12px 16px; border-radius: 12px; border: 1px solid #334155; background: #030712; color: white; outline: none; font-size: 0.95em; transition: border-color 0.2s; }
+        input[type="text"]:focus { border-color: #0ea5e9; box-shadow: 0 0 10px rgba(14, 165, 233, 0.2); }
         
-        /* Modern Single-Line Footer (Left, Center, Right) */
-        footer { margin-top: 60px; padding: 25px 0; border-top: 1px solid var(--border-color); color: var(--text-secondary); font-size: 0.9em; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
-        footer div { display: flex; align-items: center; gap: 5px; }
-        .brand-link { color: var(--python-yellow); font-weight: 600; }
+        .send-btn { padding: 0 22px; background: linear-gradient(135deg, #0ea5e9, #6366f1); color: #ffffff; border: none; border-radius: 12px; font-weight: 700; cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3); }
+        .send-btn:hover { opacity: 0.9; transform: translateY(-1px); }
         
-        #google_translate_element { display: flex; justify-content: flex-end; margin-bottom: 15px; }
-        .goog-te-gadget { color: transparent !important; }
+        /* Professional Single-Line Footer */
+        footer { margin-top: 70px; padding: 30px 0; border-top: 1px solid var(--border-color); color: var(--text-secondary); font-size: 0.92em; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+        footer div { display: flex; align-items: center; gap: 6px; }
+        .brand-link { color: #facc15; font-weight: 600; }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- Google Translate Integration -->
-        <div id="google_translate_element"></div>
-
         <h1>🐍 Python A to Z</h1>
         <p class="subtitle">Master Python Programming from Scratch with Your Dedicated Live AI Mentor</p>
 
         <!-- Python Motivation Banner -->
         <div class="python-banner">
-            <p><code>>>> print("Welcome to Python A to Z! Let's code your future.")</code></p>
+            <p><code>>>> print("Welcome to Python A to Z! Powered by Advanced AI Intelligence.")</code></p>
         </div>
 
         <div class="card">
@@ -109,7 +105,7 @@
 
         <div class="card">
             <h2>🛠️ 2. Install Essential Tools & Requirements</h2>
-            <p>To run and test Python code smoothly on your machine, install these 3 core tools:</p>
+            <p>To run and test Python code smoothly on your machine, install these 3 core developer tools:</p>
             <div class="tools-grid">
                 <div class="tool-item">
                     <strong>1. VS Code:</strong><br>
@@ -136,16 +132,16 @@
         <footer>
             <div>© 2026 All Rights Reserved.</div>
             <div>Developed with ❤️ by <a href="https://maneeshasathsara.me/" target="_blank" class="brand-link">Maneesha Sathsara</a></div>
-            <div>Powered by <a href="https://nexzata.tech/" target="_blank" class="brand-link">Nexzata Tech</a></div>
+            <div>Powered by <a href="https://nexzata.tech/" target="_blank" class="brand-link">Nexzata</a></div>
         </footer>
     </div>
 
-    <!-- Floating Chatbot Widget Button (Bottom Right) -->
+    <!-- Floating Chatbot Widget Button -->
     <button class="chat-widget-btn" onclick="toggleChat()" title="Chat with AI Mentor">
         <img src="https://api.iconify.design/fluent-emoji-flat:robot.svg" alt="AI Bot">
     </button>
 
-    <!-- Modern Chat Popup Window -->
+    <!-- Advanced Chat Popup Window -->
     <div class="chat-section" id="chat-popup">
         <div class="chat-header">
             <div class="assistant-profile">
@@ -165,7 +161,7 @@
             </div>
             
             <div style="display: flex; align-items: center; gap: 10px;">
-                <!-- Language Selector: Sinhala & English -->
+                <!-- Language Selector: English & Sinhala -->
                 <select id="chat-lang">
                     <option value="English">🇬🇧 English</option>
                     <option value="Sinhala">🇱🇰 සිංහල</option>
@@ -257,18 +253,5 @@
             }
         }
     </script>
-
-    <!-- Google Translate Script -->
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'en',
-                includedLanguages: 'si,en,ta',
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-            }, 'google_translate_element');
-        }
-    </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
 </body>
 </html>
