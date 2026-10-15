@@ -40,10 +40,10 @@
         a:hover { color: #facc15; text-decoration: underline; }
         code { background: #030712; padding: 5px 10px; border-radius: 6px; color: #f472b6; font-family: monospace; border: 1px solid #1e293b; font-size: 0.95em; font-style: normal; }
 
-        /* Floating AI Widget Button (Clean & Modern) */
-        .chat-widget-btn { position: fixed; bottom: 30px; right: 30px; width: 70px; height: 70px; background: linear-gradient(135deg, #0ea5e9, #6366f1); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 10px 30px rgba(14, 165, 233, 0.5); z-index: 1000; transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); border: 2px solid rgba(255,255,255,0.2); }
-        .chat-widget-btn:hover { transform: scale(1.1); }
-        .chat-widget-btn img { width: 42px; height: 42px; object-fit: cover; border-radius: 50%; }
+        /* Floating AI Widget Button (Completely cleaned of blue rings) */
+        .chat-widget-btn { position: fixed; bottom: 30px; right: 30px; width: 68px; height: 68px; background: transparent; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 1000; transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); border: none; padding: 0; box-shadow: none; }
+        .chat-widget-btn:hover { transform: scale(1.12); }
+        .chat-widget-btn img { width: 68px; height: 68px; object-fit: cover; border-radius: 50%; border: 2px solid #facc15; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
 
         /* Advanced Glassmorphism Chat Popup (Height Reduced / Compact) */
         .chat-section { position: fixed; bottom: 110px; right: 30px; width: 380px; height: 480px; background: rgba(11, 17, 32, 0.97); backdrop-filter: blur(25px); border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.12); box-shadow: 0 25px 50px rgba(0,0,0,0.8); display: flex; flex-direction: column; z-index: 1000; overflow: hidden; transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1); transform: scale(0); transform-origin: bottom right; opacity: 0; pointer-events: none; }
@@ -53,7 +53,7 @@
         .assistant-profile { display: flex; align-items: center; gap: 12px; }
         .avatar-container { position: relative; width: 42px; height: 42px; }
         
-        /* Zara Dynamic Emotion Expressions Animation (No outer blue ring) */
+        /* Zara Dynamic Emotion Expressions Animation (No blue outer rings) */
         .assistant-avatar { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; border: 2px solid #facc15; background: #1e293b; animation: zara-emotion-shift 6s infinite ease-in-out; }
         @keyframes zara-emotion-shift { 
             0% { filter: brightness(1) saturate(1); transform: scale(1) rotate(0deg); border-color: #facc15; } 
@@ -75,7 +75,7 @@
         .close-chat { background: rgba(255,255,255,0.06); border: none; color: #94a3b8; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1em; cursor: pointer; transition: all 0.2s; }
         .close-chat:hover { background: rgba(255,255,255,0.18); color: #fff; }
 
-        /* Fixed High-Tech Select dropdown styling for clear visibility when selected */
+        /* Fixed High-Tech Select dropdown styling */
         .header-controls { display: flex; align-items: center; gap: 8px; }
         select { background: #0f172a; color: #f8fafc; border: 1px solid #0ea5e9; padding: 7px 12px; border-radius: 10px; outline: none; cursor: pointer; font-size: 0.85em; font-weight: 600; box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3); transition: all 0.2s; }
         select option { background: #0b1120; color: #f8fafc; padding: 10px; }
@@ -153,7 +153,7 @@
         </footer>
     </div>
 
-    <!-- Floating Chatbot Widget Button -->
+    <!-- Floating Chatbot Widget Button (Clean, No Rings) -->
     <button class="chat-widget-btn" onclick="toggleChat()" title="Chat with AI Mentor">
         <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80" alt="Zara AI">
     </button>
