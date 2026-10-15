@@ -3,83 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python A to Z - Beginner's Guide & AI Mentor</title>
+    <title>Python A to Z - Ultimate Beginner's Guide & AI Mentor</title>
     <style>
-        /* Modern Python-Themed Educational UI Styles */
         :root { 
-            --bg-color: #0b0f19; 
-            --card-bg: #131c31; 
+            --bg-color: #07090e; 
+            --card-bg: #111827; 
             --text-primary: #f8fafc; 
             --text-secondary: #94a3b8; 
             --accent: #38bdf8; 
             --accent-hover: #0ea5e9; 
             --python-yellow: #ffd43b;
             --python-blue: #306998;
+            --border-color: #1f2937;
         }
         
         body { font-family: 'Segoe UI', system-ui, sans-serif; background-color: var(--bg-color); color: var(--text-primary); margin: 0; padding: 0; line-height: 1.6; }
-        .container { max-width: 850px; margin: 40px auto; padding: 20px; }
+        .container { max-width: 900px; margin: 40px auto; padding: 20px; }
         
-        /* Header Styling */
-        h1 { color: var(--python-yellow); text-align: center; font-size: 2.8em; margin-bottom: 5px; text-shadow: 0 0 20px rgba(255, 212, 59, 0.2); }
-        p.subtitle { text-align: center; color: var(--text-secondary); margin-bottom: 30px; font-size: 1.1em; }
+        /* Modern Header */
+        h1 { color: var(--python-yellow); text-align: center; font-size: 3em; margin-bottom: 5px; text-shadow: 0 0 25px rgba(255, 212, 59, 0.25); font-weight: 800; }
+        p.subtitle { text-align: center; color: var(--text-secondary); margin-bottom: 35px; font-size: 1.2em; }
 
-        /* Python Code Banner / Inspiration Box */
-        .python-banner { background: linear-gradient(135deg, #1e293b, #0f172a); border: 1px dashed var(--python-yellow); border-radius: 12px; padding: 20px; text-align: center; margin-bottom: 30px; }
-        .python-banner p { margin: 0; color: var(--python-yellow); font-family: monospace; font-size: 1.1em; }
+        /* Python Interactive Banner */
+        .python-banner { background: linear-gradient(135deg, #1e293b, #0f172a); border: 1px solid rgba(255, 212, 59, 0.3); border-radius: 14px; padding: 22px; text-align: center; margin-bottom: 35px; box-shadow: 0 10px 25px rgba(0,0,0,0.4); }
+        .python-banner p { margin: 0; color: var(--python-yellow); font-family: monospace; font-size: 1.15em; font-weight: 600; }
         
-        /* Steps Cards */
-        .card { background: var(--card-bg); border-radius: 12px; padding: 25px; margin-bottom: 20px; box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.3); border-left: 6px solid var(--python-yellow); transition: transform 0.2s, box-shadow 0.2s; }
-        .card:hover { transform: translateY(-3px); box-shadow: 0 12px 20px -4px rgba(56, 189, 248, 0.2); }
-        .card h2 { margin-top: 0; color: var(--accent); font-size: 1.4em; }
-        a { color: var(--accent); text-decoration: none; font-weight: bold; transition: color 0.2s; }
+        /* High-End Educational Cards */
+        .card { background: var(--card-bg); border-radius: 14px; padding: 28px; margin-bottom: 24px; box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.4); border: 1px solid var(--border-color); border-left: 6px solid var(--python-yellow); transition: transform 0.25s ease, box-shadow 0.25s ease; }
+        .card:hover { transform: translateY(-4px); box-shadow: 0 15px 30px -5px rgba(56, 189, 248, 0.15); border-color: #334155; }
+        .card h2 { margin-top: 0; color: var(--accent); font-size: 1.5em; display: flex; align-items: center; gap: 10px; }
+        .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 15px; margin-top: 15px; }
+        .tool-item { background: #0b0f19; padding: 15px; border-radius: 10px; border: 1px solid #1e293b; }
+        .tool-item strong { color: var(--python-yellow); }
+
+        a { color: var(--accent); text-decoration: none; font-weight: 600; transition: color 0.2s; }
         a:hover { color: var(--python-yellow); text-decoration: underline; }
-        code { background: #070a12; padding: 4px 8px; border-radius: 6px; color: #f472b6; font-family: monospace; border: 1px solid #1e293b; }
+        code { background: #070a12; padding: 4px 8px; border-radius: 6px; color: #f472b6; font-family: monospace; border: 1px solid #1e293b; font-size: 0.95em; }
 
-        /* AI Chatbot Styles with Live Assistant Animation */
-        .chat-section { margin-top: 40px; background: var(--card-bg); border-radius: 16px; padding: 25px; border: 1px solid #334155; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.5); }
-        
-        .chat-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid #1e293b; padding-bottom: 15px; }
-        
-        /* Live Assistant Profile & Teaching Animation */
-        .assistant-profile { display: flex; align-items: center; gap: 15px; }
-        .avatar-container { position: relative; width: 50px; height: 50px; }
-        .assistant-avatar { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--python-yellow); background: #1e293b; }
-        
-        /* Live Pulsing Indicator for Teaching Status */
-        .live-indicator { position: absolute; bottom: 2px; right: 2px; width: 12px; height: 12px; background-color: #22c55e; border: 2px solid var(--card-bg); border-radius: 50%; animation: pulse-live 1.5s infinite; }
-        @keyframes pulse-live {
-            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
-            70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
-            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
-        }
+        /* Floating Chatbot Widget (Bottom Right) */
+        .chat-widget-btn { position: fixed; bottom: 25px; right: 25px; width: 65px; height: 65px; background: linear-gradient(135deg, var(--python-yellow), #f59e0b); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 8px 25px rgba(255, 212, 59, 0.4); z-index: 1000; transition: transform 0.3s ease; border: none; }
+        .chat-widget-btn:hover { transform: scale(1.1); }
+        .chat-widget-btn img { width: 35px; height: 35px; object-fit: contain; }
 
-        .assistant-info h3 { margin: 0; color: var(--text-primary); font-size: 1.1em; display: flex; align-items: center; gap: 8px; }
-        
-        /* Teaching Wave Animation text */
-        .teaching-status { font-size: 0.8em; color: var(--python-yellow); display: flex; align-items: center; gap: 4px; margin-top: 2px; }
-        .wave-dot { width: 6px; height: 6px; background-color: var(--python-yellow); border-radius: 50%; display: inline-block; animation: wave 1.2s infinite ease-in-out; }
+        /* Modern Chat Popup Window */
+        .chat-section { position: fixed; bottom: 100px; right: 25px; width: 380px; height: 520px; background: var(--card-bg); border-radius: 20px; border: 1px solid #334155; box-shadow: 0 20px 40px rgba(0,0,0,0.6); display: flex; flex-direction: column; z-index: 1000; overflow: hidden; transition: all 0.3s ease; transform: scale(0); transform-origin: bottom right; opacity: 0; pointer-events: none; }
+        .chat-section.active { transform: scale(1); opacity: 1; pointer-events: auto; }
+
+        .chat-header { background: #0f172a; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1e293b; }
+        .assistant-profile { display: flex; align-items: center; gap: 12px; }
+        .avatar-container { position: relative; width: 42px; height: 42px; }
+        .assistant-avatar { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; border: 2px solid var(--python-yellow); background: #1e293b; }
+        .live-indicator { position: absolute; bottom: 0; right: 0; width: 10px; height: 10px; background-color: #22c55e; border: 2px solid var(--card-bg); border-radius: 50%; animation: pulse-live 1.5s infinite; }
+        @keyframes pulse-live { 0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); } 70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(34, 197, 94, 0); } 100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); } }
+
+        .assistant-info h3 { margin: 0; color: var(--text-primary); font-size: 1em; }
+        .teaching-status { font-size: 0.75em; color: var(--python-yellow); display: flex; align-items: center; gap: 3px; }
+        .wave-dot { width: 5px; height: 5px; background-color: var(--python-yellow); border-radius: 50%; display: inline-block; animation: wave 1.2s infinite ease-in-out; }
         .wave-dot:nth-child(2) { animation-delay: 0.2s; }
         .wave-dot:nth-child(3) { animation-delay: 0.4s; }
-        @keyframes wave { 0%, 60%, 100% { transform: translateY(0); } 30% { transform: translateY(-5px); } }
+        @keyframes wave { 0%, 60%, 100% { transform: translateY(0); } 30% { transform: translateY(-4px); } }
 
-        select { background: #070a12; color: white; border: 1px solid #334155; padding: 8px 14px; border-radius: 8px; outline: none; cursor: pointer; font-weight: 500; }
-        select:focus { border-color: var(--python-yellow); }
+        .close-chat { background: none; border: none; color: var(--text-secondary); font-size: 1.3em; cursor: pointer; padding: 0; }
+        .close-chat:hover { color: var(--text-primary); }
+
+        select { background: #070a12; color: white; border: 1px solid #334155; padding: 6px 10px; border-radius: 6px; outline: none; cursor: pointer; font-size: 0.85em; }
         
-        .chat-box { height: 380px; overflow-y: auto; background: #070a12; border-radius: 12px; padding: 18px; display: flex; flex-direction: column; gap: 15px; margin-bottom: 15px; border: 1px solid #1e293b; }
-        .msg { max-width: 80%; padding: 12px 16px; border-radius: 12px; font-size: 0.95em; line-height: 1.5; }
+        .chat-box { flex: 1; overflow-y: auto; background: #070a12; padding: 15px; display: flex; flex-direction: column; gap: 12px; border-bottom: 1px solid #1e293b; }
+        .msg { max-width: 85%; padding: 10px 14px; border-radius: 10px; font-size: 0.9em; line-height: 1.4; }
         .user-msg { background: var(--python-yellow); color: #0b0f19; align-self: flex-end; border-bottom-right-radius: 2px; font-weight: 600; }
         .bot-msg { background: #1e293b; color: var(--text-primary); align-self: flex-start; border-bottom-left-radius: 2px; border: 1px solid #334155; }
         
-        .input-area { display: flex; gap: 10px; }
-        input[type="text"] { flex: 1; padding: 14px 18px; border-radius: 10px; border: 1px solid #334155; background: #070a12; color: white; outline: none; font-size: 1em; }
+        .input-area { display: flex; gap: 8px; padding: 12px 15px; background: var(--card-bg); }
+        input[type="text"] { flex: 1; padding: 10px 14px; border-radius: 8px; border: 1px solid #334155; background: #070a12; color: white; outline: none; font-size: 0.9em; }
         input[type="text"]:focus { border-color: var(--python-yellow); }
-        button { padding: 0 25px; background: var(--python-yellow); color: #0b0f19; border: none; border-radius: 10px; font-weight: bold; cursor: pointer; transition: background 0.2s, transform 0.1s; }
-        button:hover { background: #facc15; transform: scale(1.02); }
+        .send-btn { padding: 0 18px; background: var(--python-yellow); color: #0b0f19; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; transition: background 0.2s; }
+        .send-btn:hover { background: #facc15; }
         
-        /* Footer Branding Styles */
-        footer { text-align: center; margin-top: 50px; padding: 25px 0; border-top: 1px solid #1e293b; color: var(--text-secondary); font-size: 0.9em; }
-        footer p { margin: 6px 0; }
+        /* Modern Single-Line Footer (Left, Center, Right) */
+        footer { margin-top: 60px; padding: 25px 0; border-top: 1px solid var(--border-color); color: var(--text-secondary); font-size: 0.9em; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+        footer div { display: flex; align-items: center; gap: 5px; }
         .brand-link { color: var(--python-yellow); font-weight: 600; }
         
         #google_translate_element { display: flex; justify-content: flex-end; margin-bottom: 15px; }
@@ -93,82 +95,103 @@
         <div id="google_translate_element"></div>
 
         <h1>🐍 Python A to Z</h1>
-        <p class="subtitle">Master Python Programming from Scratch with Your Dedicated AI Mentor</p>
+        <p class="subtitle">Master Python Programming from Scratch with Your Dedicated Live AI Mentor</p>
 
         <!-- Python Motivation Banner -->
         <div class="python-banner">
-            <p><code>>>> print("Welcome to your coding journey! Let's build the future.")</code></p>
+            <p><code>>>> print("Welcome to Python A to Z! Let's code your future.")</code></p>
         </div>
 
         <div class="card">
-            <h2>1. Fork the Repository</h2>
-            <p>Go to the top right of the <a href="https://github.com/maneesha-sathsara/Python-A-to-Z" target="_blank">GitHub page</a> and click the <b>Fork</b> button. This creates your own copy to practice on safely.</p>
+            <h2>🚀 1. Fork the Repository</h2>
+            <p>Go to the top right of the <a href="https://github.com/maneesha-sathsara/Python-A-to-Z" target="_blank">GitHub page</a> and click the <b>Fork</b> button. This creates your own safe copy to practice code.</p>
         </div>
 
         <div class="card">
-            <h2>2. Install Essential Tools</h2>
-            <p>
-                1. <a href="https://code.visualstudio.com/" target="_blank">VS Code</a> (The Code Editor)<br>
-                2. <a href="https://git-scm.com/" target="_blank">Git</a> (Version Control)<br>
-                3. <a href="https://www.python.org/downloads/" target="_blank">Python</a> (Tick "Add Python to PATH" during installation!)
-            </p>
+            <h2>🛠️ 2. Install Essential Tools & Requirements</h2>
+            <p>To run and test Python code smoothly on your machine, install these 3 core tools:</p>
+            <div class="tools-grid">
+                <div class="tool-item">
+                    <strong>1. VS Code:</strong><br>
+                    <a href="https://code.visualstudio.com/" target="_blank">Download Editor</a> (Essential for coding)
+                </div>
+                <div class="tool-item">
+                    <strong>2. Git:</strong><br>
+                    <a href="https://git-scm.com/" target="_blank">Download Git</a> (For version control)
+                </div>
+                <div class="tool-item">
+                    <strong>3. Python:</strong><br>
+                    <a href="https://www.python.org/downloads/" target="_blank">Download Python</a> (Tick <i>"Add Python to PATH"</i> during setup!)
+                </div>
+            </div>
         </div>
 
         <div class="card">
-            <h2>3. Clone to Your PC</h2>
-            <p>Open VS Code, go to <code>Terminal > New Terminal</code> and type:<br><br>
+            <h2>💻 3. Clone & Run on Your PC</h2>
+            <p>Open VS Code, go to <code>Terminal > New Terminal</code> and run this command to download your repository:<br><br>
             <code>git clone https://github.com/maneesha-sathsara/Python-A-to-Z.git</code></p>
         </div>
 
-        <!-- AI Chatbot UI with Live Mentor Animation Profile -->
-        <div class="chat-section">
-            <div class="chat-header">
-                <div class="assistant-profile">
-                    <div class="avatar-container">
-                        <!-- Live Assistant Photo / Avatar -->
-                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80" alt="AI Mentor" class="assistant-avatar">
-                        <div class="live-indicator"></div>
-                    </div>
-                    <div class="assistant-info">
-                        <h3>🤖 AI Python Mentor</h3>
-                        <div class="teaching-status">
-                            <span>Live Teaching</span>
-                            <span class="wave-dot"></span>
-                            <span class="wave-dot"></span>
-                            <span class="wave-dot"></span>
-                        </div>
+        <!-- Single-Line Professional Footer -->
+        <footer>
+            <div>© 2026 All Rights Reserved.</div>
+            <div>Developed with ❤️ by <a href="https://maneeshasathsara.me/" target="_blank" class="brand-link">Maneesha Sathsara</a></div>
+            <div>Powered by <a href="https://nexzata.tech/" target="_blank" class="brand-link">Nexzata Tech</a></div>
+        </footer>
+    </div>
+
+    <!-- Floating Chatbot Widget Button (Bottom Right) -->
+    <button class="chat-widget-btn" onclick="toggleChat()" title="Chat with AI Mentor">
+        <img src="https://api.iconify.design/fluent-emoji-flat:robot.svg" alt="AI Bot">
+    </button>
+
+    <!-- Modern Chat Popup Window -->
+    <div class="chat-section" id="chat-popup">
+        <div class="chat-header">
+            <div class="assistant-profile">
+                <div class="avatar-container">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80" alt="AI Mentor" class="assistant-avatar">
+                    <div class="live-indicator"></div>
+                </div>
+                <div class="assistant-info">
+                    <h3>AI Python Mentor</h3>
+                    <div class="teaching-status">
+                        <span>Live Teaching</span>
+                        <span class="wave-dot"></span>
+                        <span class="wave-dot"></span>
+                        <span class="wave-dot"></span>
                     </div>
                 </div>
-                
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: 10px;">
                 <!-- Language Selector: Sinhala & English -->
                 <select id="chat-lang">
                     <option value="English">🇬🇧 English</option>
-                    <option value="Sinhala">🇱🇰 සිංහල (Sinhala)</option>
+                    <option value="Sinhala">🇱🇰 සිංහල</option>
                 </select>
-            </div>
-            
-            <div class="chat-box" id="chat-box">
-                <div class="msg bot-msg">Hello! I am your live AI Python Mentor, created by Maneesha Sathsara. Choose your language above and ask me anything about Python, Data Science, or how to master this repository!</div>
-            </div>
-            
-            <div class="input-area">
-                <input type="text" id="user-input" placeholder="Ask a question about Python (e.g. What is a loop?)..." onkeypress="handleEnter(event)">
-                <button onclick="sendMessage()">Send</button>
+                <button class="close-chat" onclick="toggleChat()">✕</button>
             </div>
         </div>
-
-        <!-- Portfolio & Professional Footer Branding -->
-        <footer>
-            <p>© 2026 All Rights Reserved.</p>
-            <p>Developed with ❤️ by <a href="https://maneeshasathsara.me/" target="_blank" class="brand-link">Maneesha Sathsara</a></p>
-            <p>Powered by <a href="https://nexzata.tech/" target="_blank" class="brand-link">Nexzata Tech</a></p>
-        </footer>
+        
+        <div class="chat-box" id="chat-box">
+            <div class="msg bot-msg">Hello! I am your live AI Python Mentor, created by Maneesha Sathsara. Choose your language above and ask me anything about Python!</div>
+        </div>
+        
+        <div class="input-area">
+            <input type="text" id="user-input" placeholder="Ask Python question..." onkeypress="handleEnter(event)">
+            <button class="send-btn" onclick="sendMessage()">Send</button>
+        </div>
     </div>
 
     <!-- Scripts -->
     <script>
-        // Railway Backend URL
         const BACKEND_URL = "https://ai-mentor-backend-production-0c5a.up.railway.app/api/chat";
+
+        function toggleChat() {
+            const popup = document.getElementById("chat-popup");
+            popup.classList.toggle("active");
+        }
 
         async function sendMessage() {
             const inputField = document.getElementById("user-input");
@@ -177,11 +200,9 @@
             
             if (!message) return;
 
-            // Append User Message
             appendMessage(message, "user-msg");
             inputField.value = "";
 
-            // Show Typing Indicator
             const typingId = appendMessage("Thinking...", "bot-msg", true);
 
             try {
@@ -192,24 +213,23 @@
                 });
                 
                 const data = await response.json();
-                document.getElementById(typingId).remove(); // Remove typing indicator
+                document.getElementById(typingId).remove();
                 
                 if(data.error) {
                     appendMessage(`⚠️ Error: ${data.error}`, "bot-msg");
                     return;
                 }
                 
-                // Format reply
                 let reply = data.reply;
-                reply = reply.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>'); // Bold
-                reply = reply.replace(/\`(.*?)\`/g, '<code>$1</code>'); // Code
-                reply = reply.replace(/\n/g, '<br>'); // New lines
+                reply = reply.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
+                reply = reply.replace(/\`(.*?)\`/g, '<code>$1</code>');
+                reply = reply.replace(/\n/g, '<br>');
                 
                 appendMessage(reply, "bot-msg", false, true);
 
             } catch (error) {
                 document.getElementById(typingId).remove();
-                appendMessage("⚠️ Connection error. Please check your internet connection and try again.", "bot-msg");
+                appendMessage("⚠️ Connection error. Please check your internet connection.", "bot-msg");
             }
         }
 
