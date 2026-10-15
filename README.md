@@ -51,7 +51,7 @@ I update this repository weekly with new concepts, code snippets, algorithms, an
 ## 🚀 How to Use This Repository
 
 Are you completely new to coding? Don't worry! I have created a complete beginner's step-by-step guide just for you.
-👉 **[Click Here to read the Beginner Instructions (Auto-Translates to your language)](https://maneesha-sathsara.github.io/Python-A-to-Z/guide.html)**
+👉 **[Click Here to read the Beginner Instructions](https://maneesha-sathsara.github.io/Python-A-to-Z/guide.html)**
 
 Feel free to clone this repository and learn along with me!
 
