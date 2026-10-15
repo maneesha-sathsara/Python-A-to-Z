@@ -40,10 +40,10 @@
         a:hover { color: #facc15; text-decoration: underline; }
         code { background: #030712; padding: 5px 10px; border-radius: 6px; color: #f472b6; font-family: monospace; border: 1px solid #1e293b; font-size: 0.95em; font-style: normal; }
 
-        /* Floating AI Widget Button (Completely cleaned of blue rings) */
+        /* Floating AI Widget Button (Clean, No Rings) */
         .chat-widget-btn { position: fixed; bottom: 30px; right: 30px; width: 68px; height: 68px; background: transparent; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 1000; transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); border: none; padding: 0; box-shadow: none; }
         .chat-widget-btn:hover { transform: scale(1.12); }
-        .chat-widget-btn img { width: 68px; height: 68px; object-fit: cover; border-radius: 50%; border: 2px solid #facc15; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
+        .chat-widget-btn img { width: 68px; height: 68px; object-fit: cover; border-radius: 50%; border: none; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
 
         /* Advanced Glassmorphism Chat Popup (Height Reduced / Compact) */
         .chat-section { position: fixed; bottom: 110px; right: 30px; width: 380px; height: 480px; background: rgba(11, 17, 32, 0.97); backdrop-filter: blur(25px); border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.12); box-shadow: 0 25px 50px rgba(0,0,0,0.8); display: flex; flex-direction: column; z-index: 1000; overflow: hidden; transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1); transform: scale(0); transform-origin: bottom right; opacity: 0; pointer-events: none; }
@@ -51,19 +51,28 @@
 
         .chat-header { background: linear-gradient(135deg, #0f172a, #1e1b4b); padding: 14px 18px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.08); }
         .assistant-profile { display: flex; align-items: center; gap: 12px; }
-        .avatar-container { position: relative; width: 42px; height: 42px; }
+        .avatar-container { position: relative; width: 42px; height: 42px; perspective: 100px; }
         
-        /* Zara Dynamic Emotion Expressions Animation (No blue outer rings) */
-        .assistant-avatar { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; border: 2px solid #facc15; background: #1e293b; animation: zara-emotion-shift 6s infinite ease-in-out; }
-        @keyframes zara-emotion-shift { 
-            0% { filter: brightness(1) saturate(1); transform: scale(1) rotate(0deg); border-color: #facc15; } 
-            25% { filter: brightness(1.1) saturate(1.2); transform: scale(1.04) rotate(-2deg); border-color: #38bdf8; } 
-            50% { filter: brightness(1.15) saturate(1.3); transform: scale(1.06) rotate(2deg); border-color: #a855f7; } 
-            75% { filter: brightness(1.1) saturate(1.2); transform: scale(1.04) rotate(-1deg); border-color: #38bdf8; } 
-            100% { filter: brightness(1) saturate(1); transform: scale(1) rotate(0deg); border-color: #facc15; } 
+        /* Zara Head Turning (Left-Right Look) Animation + No Borders */
+        .assistant-avatar { 
+            width: 42px; 
+            height: 42px; 
+            border-radius: 50%; 
+            object-fit: cover; 
+            border: none; 
+            background: #1e293b; 
+            animation: zara-head-turn 4s infinite ease-in-out; 
+            transform-style: preserve-3d;
+        }
+        @keyframes zara-head-turn { 
+            0% { transform: rotateY(0deg) scale(1); filter: brightness(1); } 
+            25% { transform: rotateY(-22deg) scale(1.03); filter: brightness(1.1); } /* Look Left */
+            50% { transform: rotateY(0deg) scale(1); filter: brightness(1); } 
+            75% { transform: rotateY(22deg) scale(1.03); filter: brightness(1.1); }  /* Look Right */
+            100% { transform: rotateY(0deg) scale(1); filter: brightness(1); } 
         }
 
-        .live-indicator { position: absolute; bottom: 1px; right: 1px; width: 10px; height: 10px; background-color: #22c55e; border: 2px solid #0f172a; border-radius: 50%; }
+        .live-indicator { position: absolute; bottom: 1px; right: 1px; width: 10px; height: 10px; background-color: #22c55e; border: 2px solid #0f172a; border-radius: 50%; z-index: 10; }
 
         .assistant-info h3 { margin: 0; color: #f8fafc; font-size: 1em; font-weight: 700; display: flex; align-items: center; gap: 6px; }
         .teaching-status { font-size: 0.7em; color: #facc15; display: flex; align-items: center; gap: 3px; font-weight: 500; }
@@ -153,7 +162,7 @@
         </footer>
     </div>
 
-    <!-- Floating Chatbot Widget Button (Clean, No Rings) -->
+    <!-- Floating Chatbot Widget Button -->
     <button class="chat-widget-btn" onclick="toggleChat()" title="Chat with AI Mentor">
         <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80" alt="Zara AI">
     </button>
