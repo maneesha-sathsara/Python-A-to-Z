@@ -49,10 +49,9 @@ I update this repository weekly with new concepts, code snippets, algorithms, an
 ---
 
 ## 🚀 How to Use This Repository
-Each week has its own dedicated folder containing:
-1. `notes.md` - Theoretical concepts, mathematical intuitions, and ML metric explanations.
-2. `practice.py` - Documented code examples and baseline ML pipelines.
-3. `project/` - A weekly practical application (e.g., Customer Churn Prediction, Credit Scoring Model).
+
+Are you completely new to coding? Don't worry! I have created a complete beginner's step-by-step guide just for you.
+👉 **[Click Here to read the Beginner Instructions (Auto-Translates to your language)](https://maneesha-sathsara.github.io/Python-A-to-Z/guide.html)**
 
 Feel free to clone this repository and learn along with me!
 
