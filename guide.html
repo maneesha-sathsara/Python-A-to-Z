@@ -3,41 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python A to Z - Beginner's Guide</title>
+    <title>Python A to Z - Beginner's Guide & AI Mentor</title>
     <style>
-        /* Modern Educational UI Styles */
-        :root { --bg-color: #0f172a; --card-bg: #1e293b; --text-primary: #f8fafc; --text-secondary: #94a3b8; --accent: #38bdf8; --accent-hover: #0ea5e9; }
+        /* Modern Python-Themed Educational UI Styles */
+        :root { 
+            --bg-color: #0b0f19; 
+            --card-bg: #131c31; 
+            --text-primary: #f8fafc; 
+            --text-secondary: #94a3b8; 
+            --accent: #38bdf8; 
+            --accent-hover: #0ea5e9; 
+            --python-yellow: #ffd43b;
+            --python-blue: #306998;
+        }
+        
         body { font-family: 'Segoe UI', system-ui, sans-serif; background-color: var(--bg-color); color: var(--text-primary); margin: 0; padding: 0; line-height: 1.6; }
-        .container { max-width: 800px; margin: 40px auto; padding: 20px; }
-        h1 { color: var(--accent); text-align: center; font-size: 2.5em; margin-bottom: 10px; }
-        p.subtitle { text-align: center; color: var(--text-secondary); margin-bottom: 40px; }
+        .container { max-width: 850px; margin: 40px auto; padding: 20px; }
+        
+        /* Header Styling */
+        h1 { color: var(--python-yellow); text-align: center; font-size: 2.8em; margin-bottom: 5px; text-shadow: 0 0 20px rgba(255, 212, 59, 0.2); }
+        p.subtitle { text-align: center; color: var(--text-secondary); margin-bottom: 30px; font-size: 1.1em; }
+
+        /* Python Code Banner / Inspiration Box */
+        .python-banner { background: linear-gradient(135deg, #1e293b, #0f172a); border: 1px dashed var(--python-yellow); border-radius: 12px; padding: 20px; text-align: center; margin-bottom: 30px; }
+        .python-banner p { margin: 0; color: var(--python-yellow); font-family: monospace; font-size: 1.1em; }
         
         /* Steps Cards */
-        .card { background: var(--card-bg); border-radius: 12px; padding: 25px; margin-bottom: 20px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); border-left: 5px solid var(--accent); transition: transform 0.2s; }
-        .card:hover { transform: translateY(-2px); }
-        .card h2 { margin-top: 0; color: var(--accent); font-size: 1.5em; }
-        a { color: var(--accent); text-decoration: none; font-weight: bold; }
-        a:hover { text-decoration: underline; }
-        code { background: #0f172a; padding: 4px 8px; border-radius: 6px; color: #f472b6; font-family: monospace; }
+        .card { background: var(--card-bg); border-radius: 12px; padding: 25px; margin-bottom: 20px; box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.3); border-left: 6px solid var(--python-yellow); transition: transform 0.2s, box-shadow 0.2s; }
+        .card:hover { transform: translateY(-3px); box-shadow: 0 12px 20px -4px rgba(56, 189, 248, 0.2); }
+        .card h2 { margin-top: 0; color: var(--accent); font-size: 1.4em; }
+        a { color: var(--accent); text-decoration: none; font-weight: bold; transition: color 0.2s; }
+        a:hover { color: var(--python-yellow); text-decoration: underline; }
+        code { background: #070a12; padding: 4px 8px; border-radius: 6px; color: #f472b6; font-family: monospace; border: 1px solid #1e293b; }
 
-        /* AI Chatbot Styles */
-        .chat-section { margin-top: 50px; background: var(--card-bg); border-radius: 12px; padding: 25px; border: 1px solid #334155; }
-        .chat-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
-        .chat-header h2 { margin: 0; color: #a78bfa; display: flex; align-items: center; gap: 10px; }
-        select { background: #0f172a; color: white; border: 1px solid #334155; padding: 8px 12px; border-radius: 6px; outline: none; cursor: pointer; }
+        /* AI Chatbot Styles with Live Assistant Animation */
+        .chat-section { margin-top: 40px; background: var(--card-bg); border-radius: 16px; padding: 25px; border: 1px solid #334155; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.5); }
         
-        .chat-box { height: 350px; overflow-y: auto; background: #0f172a; border-radius: 8px; padding: 15px; display: flex; flex-direction: column; gap: 15px; margin-bottom: 15px; }
+        .chat-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid #1e293b; padding-bottom: 15px; }
+        
+        /* Live Assistant Profile & Teaching Animation */
+        .assistant-profile { display: flex; align-items: center; gap: 15px; }
+        .avatar-container { position: relative; width: 50px; height: 50px; }
+        .assistant-avatar { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--python-yellow); background: #1e293b; }
+        
+        /* Live Pulsing Indicator for Teaching Status */
+        .live-indicator { position: absolute; bottom: 2px; right: 2px; width: 12px; height: 12px; background-color: #22c55e; border: 2px solid var(--card-bg); border-radius: 50%; animation: pulse-live 1.5s infinite; }
+        @keyframes pulse-live {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+        }
+
+        .assistant-info h3 { margin: 0; color: var(--text-primary); font-size: 1.1em; display: flex; align-items: center; gap: 8px; }
+        
+        /* Teaching Wave Animation text */
+        .teaching-status { font-size: 0.8em; color: var(--python-yellow); display: flex; align-items: center; gap: 4px; margin-top: 2px; }
+        .wave-dot { width: 6px; height: 6px; background-color: var(--python-yellow); border-radius: 50%; display: inline-block; animation: wave 1.2s infinite ease-in-out; }
+        .wave-dot:nth-child(2) { animation-delay: 0.2s; }
+        .wave-dot:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes wave { 0%, 60%, 100% { transform: translateY(0); } 30% { transform: translateY(-5px); } }
+
+        select { background: #070a12; color: white; border: 1px solid #334155; padding: 8px 14px; border-radius: 8px; outline: none; cursor: pointer; font-weight: 500; }
+        select:focus { border-color: var(--python-yellow); }
+        
+        .chat-box { height: 380px; overflow-y: auto; background: #070a12; border-radius: 12px; padding: 18px; display: flex; flex-direction: column; gap: 15px; margin-bottom: 15px; border: 1px solid #1e293b; }
         .msg { max-width: 80%; padding: 12px 16px; border-radius: 12px; font-size: 0.95em; line-height: 1.5; }
-        .user-msg { background: var(--accent); color: #0f172a; align-self: flex-end; border-bottom-right-radius: 2px; font-weight: 500; }
-        .bot-msg { background: #334155; color: var(--text-primary); align-self: flex-start; border-bottom-left-radius: 2px; }
+        .user-msg { background: var(--python-yellow); color: #0b0f19; align-self: flex-end; border-bottom-right-radius: 2px; font-weight: 600; }
+        .bot-msg { background: #1e293b; color: var(--text-primary); align-self: flex-start; border-bottom-left-radius: 2px; border: 1px solid #334155; }
         
         .input-area { display: flex; gap: 10px; }
-        input[type="text"] { flex: 1; padding: 15px; border-radius: 8px; border: 1px solid #334155; background: #0f172a; color: white; outline: none; font-size: 1em; }
-        input[type="text"]:focus { border-color: var(--accent); }
-        button { padding: 0 25px; background: var(--accent); color: #0f172a; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; transition: background 0.2s; }
-        button:hover { background: var(--accent-hover); }
+        input[type="text"] { flex: 1; padding: 14px 18px; border-radius: 10px; border: 1px solid #334155; background: #070a12; color: white; outline: none; font-size: 1em; }
+        input[type="text"]:focus { border-color: var(--python-yellow); }
+        button { padding: 0 25px; background: var(--python-yellow); color: #0b0f19; border: none; border-radius: 10px; font-weight: bold; cursor: pointer; transition: background 0.2s, transform 0.1s; }
+        button:hover { background: #facc15; transform: scale(1.02); }
         
-        #google_translate_element { display: flex; justify-content: flex-end; margin-bottom: 20px; }
+        /* Footer Branding Styles */
+        footer { text-align: center; margin-top: 50px; padding: 25px 0; border-top: 1px solid #1e293b; color: var(--text-secondary); font-size: 0.9em; }
+        footer p { margin: 6px 0; }
+        .brand-link { color: var(--python-yellow); font-weight: 600; }
+        
+        #google_translate_element { display: flex; justify-content: flex-end; margin-bottom: 15px; }
         .goog-te-gadget { color: transparent !important; }
     </style>
 </head>
@@ -47,8 +92,13 @@
         <!-- Google Translate Integration -->
         <div id="google_translate_element"></div>
 
-        <h1>🚀 Python A to Z</h1>
-        <p class="subtitle">Complete Beginner's Practice Guide & AI Mentor</p>
+        <h1>🐍 Python A to Z</h1>
+        <p class="subtitle">Master Python Programming from Scratch with Your Dedicated AI Mentor</p>
+
+        <!-- Python Motivation Banner -->
+        <div class="python-banner">
+            <p><code>>>> print("Welcome to your coding journey! Let's build the future.")</code></p>
+        </div>
 
         <div class="card">
             <h2>1. Fork the Repository</h2>
@@ -57,9 +107,11 @@
 
         <div class="card">
             <h2>2. Install Essential Tools</h2>
-            <p>1. <a href="https://code.visualstudio.com/" target="_blank">VS Code</a> (The Code Editor)<br>
-               2. <a href="https://git-scm.com/" target="_blank">Git</a> (Version Control)<br>
-               3. <a href="https://www.python.org/downloads/" target="_blank">Python</a> (Tick "Add Python to PATH" during installation!)</p>
+            <p>
+                1. <a href="https://code.visualstudio.com/" target="_blank">VS Code</a> (The Code Editor)<br>
+                2. <a href="https://git-scm.com/" target="_blank">Git</a> (Version Control)<br>
+                3. <a href="https://www.python.org/downloads/" target="_blank">Python</a> (Tick "Add Python to PATH" during installation!)
+            </p>
         </div>
 
         <div class="card">
@@ -68,25 +120,49 @@
             <code>git clone https://github.com/maneesha-sathsara/Python-A-to-Z.git</code></p>
         </div>
 
-        <!-- AI Chatbot UI -->
+        <!-- AI Chatbot UI with Live Mentor Animation Profile -->
         <div class="chat-section">
             <div class="chat-header">
-                <h2>🤖 AI Python Mentor</h2>
+                <div class="assistant-profile">
+                    <div class="avatar-container">
+                        <!-- Live Assistant Photo / Avatar -->
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80" alt="AI Mentor" class="assistant-avatar">
+                        <div class="live-indicator"></div>
+                    </div>
+                    <div class="assistant-info">
+                        <h3>🤖 AI Python Mentor</h3>
+                        <div class="teaching-status">
+                            <span>Live Teaching</span>
+                            <span class="wave-dot"></span>
+                            <span class="wave-dot"></span>
+                            <span class="wave-dot"></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Language Selector: Sinhala & English -->
                 <select id="chat-lang">
                     <option value="English">🇬🇧 English</option>
-                    <option value="Sinhala">🇱🇰 Sinhala</option>
+                    <option value="Sinhala">🇱🇰 සිංහල (Sinhala)</option>
                 </select>
             </div>
             
             <div class="chat-box" id="chat-box">
-                <div class="msg bot-msg">Hello! I am your AI Python Mentor, created by Maneesha Sathsara. Choose your language above and ask me anything about Python, Data Science, or how to use this repository!</div>
+                <div class="msg bot-msg">Hello! I am your live AI Python Mentor, created by Maneesha Sathsara. Choose your language above and ask me anything about Python, Data Science, or how to master this repository!</div>
             </div>
             
             <div class="input-area">
-                <input type="text" id="user-input" placeholder="Ask a question about Python..." onkeypress="handleEnter(event)">
+                <input type="text" id="user-input" placeholder="Ask a question about Python (e.g. What is a loop?)..." onkeypress="handleEnter(event)">
                 <button onclick="sendMessage()">Send</button>
             </div>
         </div>
+
+        <!-- Portfolio & Professional Footer Branding -->
+        <footer>
+            <p>© 2026 All Rights Reserved.</p>
+            <p>Developed with ❤️ by <a href="https://maneeshasathsara.me/" target="_blank" class="brand-link">Maneesha Sathsara</a></p>
+            <p>Powered by <a href="https://nexzata.tech/" target="_blank" class="brand-link">Nexzata Tech</a></p>
+        </footer>
     </div>
 
     <!-- Scripts -->
@@ -167,7 +243,7 @@
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
                 pageLanguage: 'en',
-                includedLanguages: 'si,en,ta,es,fr,de',
+                includedLanguages: 'si,en,ta',
                 layout: google.translate.TranslateElement.InlineLayout.SIMPLE
             }, 'google_translate_element');
         }
