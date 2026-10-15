@@ -40,31 +40,34 @@
         a:hover { color: #facc15; text-decoration: underline; }
         code { background: #030712; padding: 5px 10px; border-radius: 6px; color: #f472b6; font-family: monospace; border: 1px solid #1e293b; font-size: 0.95em; }
 
-        /* Floating AI Widget Button */
-        .chat-widget-btn { position: fixed; bottom: 30px; right: 30px; width: 70px; height: 70px; background: linear-gradient(135deg, #0ea5e9, #6366f1); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 10px 30px rgba(14, 165, 233, 0.5); z-index: 1000; transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); border: 2px solid rgba(255,255,255,0.2); }
+        /* Floating AI Widget Button with Advanced Glow & Pulse */
+        .chat-widget-btn { position: fixed; bottom: 30px; right: 30px; width: 75px; height: 75px; background: linear-gradient(135deg, #0ea5e9, #6366f1); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 10px 35px rgba(14, 165, 233, 0.6); z-index: 1000; transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); border: 2px solid rgba(255,255,255,0.3); animation: widget-pulse 2s infinite; }
+        @keyframes widget-pulse { 0% { box-shadow: 0 0 0 0 rgba(14, 165, 233, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(14, 165, 233, 0); } 100% { box-shadow: 0 0 0 0 rgba(14, 165, 233, 0); } }
         .chat-widget-btn:hover { transform: scale(1.12); }
-        .chat-widget-btn img { width: 38px; height: 38px; object-fit: contain; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3)); }
+        .chat-widget-btn img { width: 42px; height: 42px; object-fit: cover; border-radius: 50%; border: 2px solid #facc15; }
 
         /* Advanced Glassmorphism Chat Popup */
-        .chat-section { position: fixed; bottom: 115px; right: 30px; width: 400px; height: 560px; background: rgba(11, 17, 32, 0.95); backdrop-filter: blur(20px); border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 25px 50px rgba(0,0,0,0.7); display: flex; flex-direction: column; z-index: 1000; overflow: hidden; transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1); transform: scale(0); transform-origin: bottom right; opacity: 0; pointer-events: none; }
+        .chat-section { position: fixed; bottom: 120px; right: 30px; width: 420px; height: 580px; background: rgba(11, 17, 32, 0.96); backdrop-filter: blur(25px); border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.12); box-shadow: 0 25px 60px rgba(0,0,0,0.8); display: flex; flex-direction: column; z-index: 1000; overflow: hidden; transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1); transform: scale(0); transform-origin: bottom right; opacity: 0; pointer-events: none; }
         .chat-section.active { transform: scale(1); opacity: 1; pointer-events: auto; }
 
-        .chat-header { background: linear-gradient(135deg, #0f172a, #1e1b4b); padding: 18px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .chat-header { background: linear-gradient(135deg, #0f172a, #1e1b4b); padding: 18px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.08); }
         .assistant-profile { display: flex; align-items: center; gap: 14px; }
-        .avatar-container { position: relative; width: 46px; height: 46px; }
-        .assistant-avatar { width: 46px; height: 46px; border-radius: 50%; object-fit: cover; border: 2px solid #facc15; background: #1e293b; box-shadow: 0 0 15px rgba(250, 204, 21, 0.4); }
-        .live-indicator { position: absolute; bottom: 0; right: 0; width: 12px; height: 12px; background-color: #22c55e; border: 2px solid #0f172a; border-radius: 50%; animation: pulse-live 1.5s infinite; }
+        .avatar-container { position: relative; width: 50px; height: 50px; }
+        .assistant-avatar { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid #facc15; background: #1e293b; box-shadow: 0 0 20px rgba(250, 204, 21, 0.5); animation: avatar-glow 3s infinite alternate; }
+        @keyframes avatar-glow { 0% { box-shadow: 0 0 10px rgba(250, 204, 21, 0.4); } 100% { box-shadow: 0 0 22px rgba(14, 165, 233, 0.7); } }
+
+        .live-indicator { position: absolute; bottom: 2px; right: 2px; width: 12px; height: 12px; background-color: #22c55e; border: 2px solid #0f172a; border-radius: 50%; animation: pulse-live 1.5s infinite; }
         @keyframes pulse-live { 0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); } 70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); } 100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); } }
 
-        .assistant-info h3 { margin: 0; color: #f8fafc; font-size: 1.05em; font-weight: 700; letter-spacing: 0.3px; }
-        .teaching-status { font-size: 0.75em; color: #facc15; display: flex; align-items: center; gap: 4px; font-weight: 500; }
+        .assistant-info h3 { margin: 0; color: #f8fafc; font-size: 1.1em; font-weight: 700; display: flex; align-items: center; gap: 6px; }
+        .teaching-status { font-size: 0.75em; color: #facc15; display: flex; align-items: center; gap: 4px; font-weight: 500; margin-top: 2px; }
         .wave-dot { width: 5px; height: 5px; background-color: #facc15; border-radius: 50%; display: inline-block; animation: wave 1.2s infinite ease-in-out; }
         .wave-dot:nth-child(2) { animation-delay: 0.2s; }
         .wave-dot:nth-child(3) { animation-delay: 0.4s; }
         @keyframes wave { 0%, 60%, 100% { transform: translateY(0); } 30% { transform: translateY(-5px); } }
 
-        .close-chat { background: rgba(255,255,255,0.05); border: none; color: #94a3b8; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1em; cursor: pointer; transition: all 0.2s; }
-        .close-chat:hover { background: rgba(255,255,255,0.15); color: #fff; }
+        .close-chat { background: rgba(255,255,255,0.06); border: none; color: #94a3b8; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2em; cursor: pointer; transition: all 0.2s; }
+        .close-chat:hover { background: rgba(255,255,255,0.18); color: #fff; }
 
         select { background: #030712; color: #f8fafc; border: 1px solid #334155; padding: 8px 12px; border-radius: 8px; outline: none; cursor: pointer; font-size: 0.85em; font-weight: 600; transition: border-color 0.2s; }
         select:focus { border-color: #0ea5e9; }
@@ -74,17 +77,21 @@
         .user-msg { background: linear-gradient(135deg, #0ea5e9, #6366f1); color: #ffffff; align-self: flex-end; border-bottom-right-radius: 3px; font-weight: 500; }
         .bot-msg { background: #111827; color: #f8fafc; align-self: flex-start; border-bottom-left-radius: 3px; border: 1px solid #1f2937; }
         
-        .input-area { display: flex; gap: 10px; padding: 15px; background: rgba(11, 17, 32, 0.95); }
+        .input-area { display: flex; gap: 10px; padding: 16px; background: rgba(11, 17, 32, 0.96); }
         input[type="text"] { flex: 1; padding: 12px 16px; border-radius: 12px; border: 1px solid #334155; background: #030712; color: white; outline: none; font-size: 0.95em; transition: border-color 0.2s; }
-        input[type="text"]:focus { border-color: #0ea5e9; box-shadow: 0 0 10px rgba(14, 165, 233, 0.2); }
+        input[type="text"]:focus { border-color: #0ea5e9; box-shadow: 0 0 12px rgba(14, 165, 233, 0.25); }
         
         .send-btn { padding: 0 22px; background: linear-gradient(135deg, #0ea5e9, #6366f1); color: #ffffff; border: none; border-radius: 12px; font-weight: 700; cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3); }
         .send-btn:hover { opacity: 0.9; transform: translateY(-1px); }
         
-        /* Professional Single-Line Footer */
+        /* Professional Single-Line Footer with Animated Emojis */
         footer { margin-top: 70px; padding: 30px 0; border-top: 1px solid var(--border-color); color: var(--text-secondary); font-size: 0.92em; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
         footer div { display: flex; align-items: center; gap: 6px; }
         .brand-link { color: #facc15; font-weight: 600; }
+        
+        /* Smooth Bouncing Emoji Animations */
+        .anim-emoji { display: inline-block; animation: bounce-emoji 1.8s infinite ease-in-out; }
+        @keyframes bounce-emoji { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
     </style>
 </head>
 <body>
@@ -128,17 +135,17 @@
             <code>git clone https://github.com/maneesha-sathsara/Python-A-to-Z.git</code></p>
         </div>
 
-        <!-- Single-Line Professional Footer -->
+        <!-- Single-Line Professional Footer with Animated Emojis -->
         <footer>
             <div>© 2026 All Rights Reserved.</div>
-            <div>Developed with ❤️ by <a href="https://maneeshasathsara.me/" target="_blank" class="brand-link">Maneesha Sathsara</a></div>
-            <div>Powered by <a href="https://nexzata.tech/" target="_blank" class="brand-link">Nexzata</a></div>
+            <div>Developed with <span class="anim-emoji">❤️</span> by <a href="https://maneeshasathsara.me/" target="_blank" class="brand-link">Maneesha Sathsara</a> <span class="anim-emoji">👨‍💻</span></div>
+            <div>Powered by <a href="https://nexzata.tech/" target="_blank" class="brand-link">Nexzata</a> <span class="anim-emoji">⚡</span></div>
         </footer>
     </div>
 
-    <!-- Floating Chatbot Widget Button -->
+    <!-- Floating Chatbot Widget Button (Bottom Right) -->
     <button class="chat-widget-btn" onclick="toggleChat()" title="Chat with AI Mentor">
-        <img src="https://api.iconify.design/fluent-emoji-flat:robot.svg" alt="AI Bot">
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80" alt="Zara AI">
     </button>
 
     <!-- Advanced Chat Popup Window -->
@@ -146,11 +153,11 @@
         <div class="chat-header">
             <div class="assistant-profile">
                 <div class="avatar-container">
-                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80" alt="AI Mentor" class="assistant-avatar">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80" alt="Zara AI" class="assistant-avatar">
                     <div class="live-indicator"></div>
                 </div>
                 <div class="assistant-info">
-                    <h3>AI Python Mentor</h3>
+                    <h3>Zara <span style="font-size: 0.8em; color: #38bdf8;">(AI Mentor)</span></h3>
                     <div class="teaching-status">
                         <span>Live Teaching</span>
                         <span class="wave-dot"></span>
@@ -171,7 +178,7 @@
         </div>
         
         <div class="chat-box" id="chat-box">
-            <div class="msg bot-msg">Hello! I am your live AI Python Mentor, created by Maneesha Sathsara. Choose your language above and ask me anything about Python!</div>
+            <div class="msg bot-msg">Hello! I'm Zara, your AI Python Mentor. Ask me anything about Python! 🐍✨</div>
         </div>
         
         <div class="input-area">
