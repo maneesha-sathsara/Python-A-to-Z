@@ -234,12 +234,7 @@
                 });
                 
                 const data = await response.json();
-                
-                // Thinking මැසේජ් එක උත්තරය ලැබුණු වහාම ඉවත් කිරීමට මෙය පළමුව ක්‍රියාත්මක වේ
-                const typingElement = document.getElementById(typingId);
-                if (typingElement) {
-                    typingElement.remove();
-                }
+                document.getElementById(typingId).remove();
                 
                 if(data.error) {
                     appendMessage(`⚠️ Error: ${data.error}`, "bot-msg");
@@ -254,10 +249,7 @@
                 appendMessage(reply, "bot-msg", false, true);
 
             } catch (error) {
-                const typingElement = document.getElementById(typingId);
-                if (typingElement) {
-                    typingElement.remove();
-                }
+                document.getElementById(typingId).remove();
                 appendMessage("⚠️ Connection error. Please check your internet connection.", "bot-msg");
             }
         }
