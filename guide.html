@@ -3,54 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How to Start - Python A to Z</title>
+    <title>Python A to Z - Beginner's Guide</title>
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 40px auto; max-width: 800px; padding: 20px; color: #333; }
-        h1, h2 { color: #2E95D3; }
-        .step { background: #f4f4f4; padding: 15px; margin-bottom: 20px; border-radius: 8px; border-left: 5px solid #2E95D3; }
-        code { background: #e8e8e8; padding: 2px 5px; border-radius: 4px; color: #d6336c; }
+        /* Modern Educational UI Styles */
+        :root { --bg-color: #0f172a; --card-bg: #1e293b; --text-primary: #f8fafc; --text-secondary: #94a3b8; --accent: #38bdf8; --accent-hover: #0ea5e9; }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; background-color: var(--bg-color); color: var(--text-primary); margin: 0; padding: 0; line-height: 1.6; }
+        .container { max-width: 800px; margin: 40px auto; padding: 20px; }
+        h1 { color: var(--accent); text-align: center; font-size: 2.5em; margin-bottom: 10px; }
+        p.subtitle { text-align: center; color: var(--text-secondary); margin-bottom: 40px; }
+        
+        /* Steps Cards */
+        .card { background: var(--card-bg); border-radius: 12px; padding: 25px; margin-bottom: 20px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); border-left: 5px solid var(--accent); transition: transform 0.2s; }
+        .card:hover { transform: translateY(-2px); }
+        .card h2 { margin-top: 0; color: var(--accent); font-size: 1.5em; }
+        a { color: var(--accent); text-decoration: none; font-weight: bold; }
+        a:hover { text-decoration: underline; }
+        code { background: #0f172a; padding: 4px 8px; border-radius: 6px; color: #f472b6; font-family: monospace; }
+
+        /* AI Chatbot Styles */
+        .chat-section { margin-top: 50px; background: var(--card-bg); border-radius: 12px; padding: 25px; border: 1px solid #334155; }
+        .chat-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .chat-header h2 { margin: 0; color: #a78bfa; display: flex; align-items: center; gap: 10px; }
+        select { background: #0f172a; color: white; border: 1px solid #334155; padding: 8px 12px; border-radius: 6px; outline: none; cursor: pointer; }
+        
+        .chat-box { height: 350px; overflow-y: auto; background: #0f172a; border-radius: 8px; padding: 15px; display: flex; flex-direction: column; gap: 15px; margin-bottom: 15px; }
+        .msg { max-width: 80%; padding: 12px 16px; border-radius: 12px; font-size: 0.95em; line-height: 1.5; }
+        .user-msg { background: var(--accent); color: #0f172a; align-self: flex-end; border-bottom-right-radius: 2px; font-weight: 500; }
+        .bot-msg { background: #334155; color: var(--text-primary); align-self: flex-start; border-bottom-left-radius: 2px; }
+        
+        .input-area { display: flex; gap: 10px; }
+        input[type="text"] { flex: 1; padding: 15px; border-radius: 8px; border: 1px solid #334155; background: #0f172a; color: white; outline: none; font-size: 1em; }
+        input[type="text"]:focus { border-color: var(--accent); }
+        button { padding: 0 25px; background: var(--accent); color: #0f172a; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; transition: background 0.2s; }
+        button:hover { background: var(--accent-hover); }
+        
+        #google_translate_element { display: flex; justify-content: flex-end; margin-bottom: 20px; }
+        .goog-te-gadget { color: transparent !important; }
     </style>
 </head>
 <body>
 
-    <!-- Google Translate Dropdown -->
-    <div id="google_translate_element" style="float: right;"></div>
-    
-    <h1>🚀 How to Practice with this Repository (Beginner's Guide)</h1>
-    <p>Welcome! If you have zero coding knowledge, don't worry. Follow these simple steps to get started with Python.</p>
+    <div class="container">
+        <!-- Google Translate Integration -->
+        <div id="google_translate_element"></div>
 
-    <div class="step">
-        <h2>Step 1: Create a GitHub Account & Fork the Repo</h2>
-        <p>1. Go to <a href="https://github.com" target="_blank">github.com</a> and create a free account.<br>
-        2. Come back to this project page and click the <b>"Fork"</b> button at the top right corner. This makes a copy of this project into your own account.</p>
+        <h1>🚀 Python A to Z</h1>
+        <p class="subtitle">Complete Beginner's Practice Guide & AI Mentor</p>
+
+        <div class="card">
+            <h2>1. Fork the Repository</h2>
+            <p>Go to the top right of the <a href="https://github.com/maneesha-sathsara/Python-A-to-Z" target="_blank">GitHub page</a> and click the <b>Fork</b> button. This creates your own copy to practice on safely.</p>
+        </div>
+
+        <div class="card">
+            <h2>2. Install Essential Tools</h2>
+            <p>1. <a href="https://code.visualstudio.com/" target="_blank">VS Code</a> (The Code Editor)<br>
+               2. <a href="https://git-scm.com/" target="_blank">Git</a> (Version Control)<br>
+               3. <a href="https://www.python.org/downloads/" target="_blank">Python</a> (Tick "Add Python to PATH" during installation!)</p>
+        </div>
+
+        <div class="card">
+            <h2>3. Clone to Your PC</h2>
+            <p>Open VS Code, go to <code>Terminal > New Terminal</code> and type:<br><br>
+            <code>git clone https://github.com/maneesha-sathsara/Python-A-to-Z.git</code></p>
+        </div>
+
+        <!-- AI Chatbot UI -->
+        <div class="chat-section">
+            <div class="chat-header">
+                <h2>🤖 AI Python Mentor</h2>
+                <select id="chat-lang">
+                    <option value="English">🇬🇧 English</option>
+                    <option value="Sinhala">🇱🇰 Sinhala</option>
+                </select>
+            </div>
+            
+            <div class="chat-box" id="chat-box">
+                <div class="msg bot-msg">Hello! I am your AI Python Mentor, created by Maneesha Sathsara. Choose your language above and ask me anything about Python, Data Science, or how to use this repository!</div>
+            </div>
+            
+            <div class="input-area">
+                <input type="text" id="user-input" placeholder="Ask a question about Python..." onkeypress="handleEnter(event)">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
     </div>
 
-    <div class="step">
-        <h2>Step 2: Install Essential Software</h2>
-        <p>1. Download and install <b>VS Code</b> (Code Editor) from <a href="https://code.visualstudio.com/" target="_blank">here</a>.<br>
-        2. Download and install <b>Git</b> from <a href="https://git-scm.com/" target="_blank">here</a>.<br>
-        3. Download and install <b>Python</b> from <a href="https://www.python.org/downloads/" target="_blank">here</a> (Make sure to tick "Add Python to PATH" during installation!).</p>
-    </div>
+    <!-- Scripts -->
+    <script>
+        // Railway Backend URL
+        const BACKEND_URL = "https://ai-mentor-backend-production-0c5a.up.railway.app/api/chat";
 
-    <div class="step">
-        <h2>Step 3: Clone the Repository to Your Computer</h2>
-        <p>1. Open <b>VS Code</b>.<br>
-        2. Go to <code>Terminal > New Terminal</code> in the top menu.<br>
-        3. Go to your forked GitHub repository, click the green <b>"Code"</b> button, and copy the web URL.<br>
-        4. In the VS Code terminal, type <code>git clone [Paste the URL here]</code> and press Enter.</p>
-    </div>
+        async function sendMessage() {
+            const inputField = document.getElementById("user-input");
+            const message = inputField.value.trim();
+            const lang = document.getElementById("chat-lang").value;
+            
+            if (!message) return;
 
-    <div class="step">
-        <h2>Step 4: Open and Run Your First Python File</h2>
-        <p>1. In VS Code, go to <code>File > Open Folder</code> and select the folder you just downloaded.<br>
-        2. Find a file ending with <code>.py</code> (e.g., <code>hello.py</code>) and open it.<br>
-        3. Click the <b>Play (Run) button</b> at the top right corner of VS Code to run the code!<br>
-        4. You will see the output in the terminal at the bottom.</p>
-    </div>
+            // Append User Message
+            appendMessage(message, "user-msg");
+            inputField.value = "";
 
+            // Show Typing Indicator
+            const typingId = appendMessage("Thinking...", "bot-msg", true);
+
+            try {
+                const response = await fetch(BACKEND_URL, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ message: message, lang: lang })
+                });
+                
+                const data = await response.json();
+                document.getElementById(typingId).remove(); // Remove typing indicator
+                
+                if(data.error) {
+                    appendMessage(`⚠️ Error: ${data.error}`, "bot-msg");
+                    return;
+                }
+                
+                // Format reply
+                let reply = data.reply;
+                reply = reply.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>'); // Bold
+                reply = reply.replace(/\`(.*?)\`/g, '<code>$1</code>'); // Code
+                reply = reply.replace(/\n/g, '<br>'); // New lines
+                
+                appendMessage(reply, "bot-msg", false, true);
+
+            } catch (error) {
+                document.getElementById(typingId).remove();
+                appendMessage("⚠️ Connection error. Please check your internet connection and try again.", "bot-msg");
+            }
+        }
+
+        function appendMessage(text, className, isTyping = false, isHTML = false) {
+            const chatBox = document.getElementById("chat-box");
+            const div = document.createElement("div");
+            div.className = `msg ${className}`;
+            
+            if(isHTML) {
+                div.innerHTML = text;
+            } else {
+                div.innerText = text;
+            }
+
+            const id = 'msg-' + Date.now();
+            div.id = id;
+            chatBox.appendChild(div);
+            chatBox.scrollTop = chatBox.scrollHeight;
+            return id;
+        }
+
+        function handleEnter(event) {
+            if (event.key === "Enter") {
+                sendMessage();
+            }
+        }
+    </script>
+
+    <!-- Google Translate Script -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
-            new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'si,en,ta,es,fr,de',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
         }
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
