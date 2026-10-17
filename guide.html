@@ -110,6 +110,27 @@
         /* Smooth Bouncing Emoji Animations */
         .anim-emoji { display: inline-block; animation: bounce-emoji 1.8s infinite ease-in-out; }
         @keyframes bounce-emoji { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+
+        /* Mobile Responsiveness for Chat Widget (Added part) */
+        @media (max-width: 480px) {
+            .chat-section {
+                width: calc(100% - 40px);
+                right: 20px;
+                bottom: 100px;
+                height: calc(100vh - 140px);
+                max-height: 500px;
+            }
+            .chat-widget-btn {
+                bottom: 20px;
+                right: 20px;
+                width: 60px;
+                height: 60px;
+            }
+            .chat-widget-btn img {
+                width: 60px;
+                height: 60px;
+            }
+        }
     </style>
 </head>
 <body>
